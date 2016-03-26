@@ -7,7 +7,7 @@ url = "https://api.whatismybrowser.com/api/v1/user_agent_parse"
 # put your api key in this variable:
 user_key = ""
 
-# a small list of example user agents
+# the user agent to parse
 user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2357.124 Safari/537.36'
 
 # -- prepare data for the API request
