@@ -19,6 +19,7 @@ post_data = {
 # -- make the request to the whatismybrowser server
 result = requests.post(url, data=post_data)
 
+# -- check that the server responded with a "200/Success" code
 if result.status_code != 200:
     print(result.text)
 
@@ -26,7 +27,7 @@ if result.status_code != 200:
 try:
     result_json = result.json()
 except Exception as e:
-    print(e)
+    print("Couldn't decode the response as JSON:", e)
 
 # -- check the API request was successful
 if result_json.get('result') != "success":
@@ -35,6 +36,9 @@ if result_json.get('result') != "success":
 # now you have "result_json" and can store, display or process any part of the response.
 # for example:
 print(result_json.get('parse').get('simple_browser_string'))
+
+# Please refer to the documentation on https://developers.whatismybrowser.com for a
+# full list of the available fields and their intended usage.
 
 # -- print the entire json dump for reference
 print(json.dumps(result_json, indent=2))
